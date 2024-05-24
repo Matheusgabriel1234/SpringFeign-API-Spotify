@@ -34,6 +34,8 @@ public albumController(AuthSpotifyClient auth, AlbumClient album) {
 
    @GetMapping("/albums")
 	public ResponseEntity<List<Album>> getAlbums() {
+	   //Login Request(client_credentials,exemplo de clientid e exemplo de client secret)
+	 
 	   var request = new LoginRequest("client_credentials","6a1dd1a3d03d4c7a9cd737d35c2a95c9","cd4362654df14d05a2c548c69f78634b");
 		var token = auth.login(request).getAcessToken();
 		var response  = album.getRealeases("Bearer " + token);
